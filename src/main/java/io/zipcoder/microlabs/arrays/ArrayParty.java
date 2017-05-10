@@ -1,6 +1,10 @@
 package io.zipcoder.microlabs.arrays;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ArrayParty {
 
 
@@ -17,7 +21,6 @@ public class ArrayParty {
     }
 
 
-
     public String lastElement(String[] inputArray) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("*** Output ***\n");
@@ -26,7 +29,7 @@ public class ArrayParty {
         return stringBuilder.toString();
     }
 
-
+//TODO Define the method lastButOne
 
     public String lastButOne(String[] inputArray) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -36,18 +39,31 @@ public class ArrayParty {
         return stringBuilder.toString();
     }
 
-}
 
-//TODO Define the method lastButOne
+    //TODO Define the method reverse
 
-//TODO Define the method reverse
+
+    public String reverse(String[] inputArray) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("*** Output ***\n");
+        int i;
+        for (i = 0; i < inputArray.length; i++) {
+            String temp = inputArray[inputArray.length - 1 - i];
+            stringBuilder.append(inputArray[inputArray.length - 1 - i]+"\n" );
+        }
+        return stringBuilder.toString();
+    }
+
 
 //TODO Define the method isPalindrome
+
+
 
 //TODO Define the method compress
 
 //TODO Define the method pack
 
-    
 
+}
 

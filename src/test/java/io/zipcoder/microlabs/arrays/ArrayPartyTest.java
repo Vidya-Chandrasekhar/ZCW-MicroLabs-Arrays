@@ -40,6 +40,8 @@ public class ArrayPartyTest {
         Assert.assertEquals("The two string outputs are equal", expected, actual);
     }
 
+    //TODO Define the method lastButOneTest
+
     @Test
     public void lastButOneTest(){
         //: Given
@@ -56,10 +58,27 @@ public class ArrayPartyTest {
     }
 
 
-
-    //TODO Define the method lastButOneTest
-
     //TODO Define the method reverseTest
+    @Test
+    public void reverseTest(){
+        //: Given
+        String[] breakfast = {"Sausage", "Eggs", "Beans", "Bacon", "Tomatoes", "Mushrooms"};
+        ArrayParty arrayParty = new ArrayParty();
+        String expected = "*** Output ***\n" +
+                "Mushrooms\n" +
+                "Tomatoes\n" +
+                "Bacon\n"+
+                "Beans\n"+
+                "Eggs\n"+
+                "Sausage\n";
+
+        //: When
+        String actual = arrayParty.reverse(breakfast);
+
+        //: Then
+        Assert.assertEquals("The two string outputs are equal", expected, actual);
+    }
+
 
     //TODO Define the method isPalindromeTest
 
