@@ -1,8 +1,6 @@
 package io.zipcoder.microlabs.arrays;
 
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ArrayParty {
@@ -29,7 +27,7 @@ public class ArrayParty {
         return stringBuilder.toString();
     }
 
-//TODO Define the method lastButOne
+    //TODO Define the method lastButOne
 
     public String lastButOne(String[] inputArray) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -42,7 +40,6 @@ public class ArrayParty {
 
     //TODO Define the method reverse
 
-
     public String reverse(String[] inputArray) {
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -50,20 +47,68 @@ public class ArrayParty {
         int i;
         for (i = 0; i < inputArray.length; i++) {
             String temp = inputArray[inputArray.length - 1 - i];
-            stringBuilder.append(inputArray[inputArray.length - 1 - i]+"\n" );
+            stringBuilder.append(inputArray[inputArray.length - 1 - i] + "\n");
         }
         return stringBuilder.toString();
     }
 
 
-//TODO Define the method isPalindrome
+    //TODO Define the method isPalindrome
+
+    public boolean isPalindrome(String[] inputArray) {
+
+
+        for (int i = 0; i < inputArray.length / 2; i++) {
+            if (!inputArray[i].equals(inputArray[inputArray.length - (i + 1)])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    //TODO Define the method compress
+
+    public String compress(int[] inputArray) {
+
+        List<Integer> returnList = new ArrayList<Integer>();
+        int prevElement = inputArray[0];
+        returnList.add(inputArray[0]);
+        for (int currentElement : inputArray) {
+            if (currentElement != prevElement) {
+                returnList.add(currentElement);
+                prevElement = currentElement;
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int element : returnList) {
+            sb.append(element + "\n");
+        }
+        return sb.toString();
+
+    }
 
 
 
-//TODO Define the method compress
 
-//TODO Define the method pack
+    //TODO Define the method pack
 
 
+    public String pack(char[] inputArray) {
+        char prevElement = inputArray[0];
+        StringBuilder sb = new StringBuilder();
+        for (char currentElement : inputArray) {
+            if (currentElement == prevElement) {
+                sb.append(currentElement);
+            } else {
+                sb.append(", ");
+                sb.append(currentElement);
+                prevElement = currentElement;
+            }
+        }
+        return sb.toString();
+
+    }
 }
 
